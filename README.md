@@ -25,6 +25,7 @@ Features
 - Disconnect the specified user
 - Prints the banned IP addresses
 - Unban the specified IP
+- Support Fedora - Debian - CentOS - Ubuntu - Red Hat
 
 ## How to use
 
