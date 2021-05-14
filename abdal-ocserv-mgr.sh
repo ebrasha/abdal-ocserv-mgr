@@ -25,35 +25,35 @@ then
   echo "Please enter the user name"
   read -r
   user_name=$REPLY
-  sudo ocpasswd -c /etc/ocserv/ocpasswd $user_name
+  ocpasswd -c /etc/ocserv/ocpasswd $user_name
   echo "user created successfully"
 elif [ $user_selection -eq "2" ]
 then
   echo "Please enter the user name"
   read -r
   user_name=$REPLY
-  sudo ocpasswd -l -c /etc/ocserv/ocpasswd $user_name
+  ocpasswd -l -c /etc/ocserv/ocpasswd $user_name
   echo "user locked successfully"
 elif [ $user_selection -eq "3" ]
 then
   echo "Please enter the user name"
   read -r
   user_name=$REPLY
-  sudo ocpasswd -u -c /etc/ocserv/ocpasswd $user_name
+  ocpasswd -u -c /etc/ocserv/ocpasswd $user_name
   echo "user unlocked successfully"
 elif [ $user_selection -eq "4" ]
 then
   echo "Please enter the user name"
   read -r
   user_name=$REPLY
-  sudo ocpasswd -d -c /etc/ocserv/ocpasswd $user_name
+  ocpasswd -d -c /etc/ocserv/ocpasswd $user_name
   echo "user deleted successfully"
 elif [ $user_selection -eq "5" ]
 then
   echo ""
   echo ""
   echo "########################################################################"
-  sudo cat /etc/ocserv/ocpasswd
+  cat /etc/ocserv/ocpasswd
   echo "########################################################################"
   echo ""
   echo ""
