@@ -17,6 +17,7 @@ The best tool for OpenConnect VPN Server management
 Features
 
 - Create a user
+- Change User Password 
 - Lock user account
 - unlock user account
 - delete user account
@@ -25,6 +26,7 @@ Features
 - Disconnect the specified user
 - Prints the banned IP addresses
 - Unban the specified IP
+- Show Users Connection Software Type
 - Support Fedora - Debian - CentOS - Ubuntu - Red Hat
 
 ## How to use
