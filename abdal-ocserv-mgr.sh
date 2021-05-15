@@ -8,14 +8,16 @@ Email: Prof.Shafiei@Gmail.com
 "
 echo "Please select your action"
 echo "--1. Create a user"
-echo "--2. Lock user account"
-echo "--3. unlock user account"
-echo "--4. delete user account"
-echo "--5. Show All Users"
-echo "--6. Show connecting users"
-echo "--7. Disconnect the specified user"
-echo "--8. Prints the banned IP addresses"
-echo "--9. Unban the specified IP"
+echo "--2. Change user pass"
+echo "--3. Lock user account"
+echo "--4. unlock user account"
+echo "--5. delete user account"
+echo "--6. Show All Users"
+echo "--7. Show connecting users"
+echo "--8. Disconnect the specified user"
+echo "--9. Prints the banned IP addresses"
+echo "--10. Unban the specified IP"
+echo "--11. Show Users Connection Software Type"
 read -r
 user_selection=$REPLY
 
@@ -32,24 +34,32 @@ then
   echo "Please enter the user name"
   read -r
   user_name=$REPLY
+  ocpasswd -c /etc/ocserv/ocpasswd $user_name
+  echo "password has been changed successfully"
+elif [ $user_selection -eq "3" ]
+then
+  echo "Please enter the user name"
+  read -r
+  user_name=$REPLY
   ocpasswd -l -c /etc/ocserv/ocpasswd $user_name
   echo "user locked successfully"
-elif [ $user_selection -eq "3" ]
+elif [ $user_selection -eq "4" ]
 then
   echo "Please enter the user name"
   read -r
   user_name=$REPLY
   ocpasswd -u -c /etc/ocserv/ocpasswd $user_name
   echo "user unlocked successfully"
-elif [ $user_selection -eq "4" ]
+elif [ $user_selection -eq "5" ]
 then
   echo "Please enter the user name"
   read -r
   user_name=$REPLY
   ocpasswd -d -c /etc/ocserv/ocpasswd $user_name
   echo "user deleted successfully"
-elif [ $user_selection -eq "5" ]
+elif [ $user_selection -eq "6" ]
 then
+  clear
   echo ""
   echo ""
   echo "########################################################################"
@@ -57,27 +67,34 @@ then
   echo "########################################################################"
   echo ""
   echo ""
-elif [ $user_selection -eq "6" ]
+elif [ $user_selection -eq "7" ]
 then
   occtl  show events
   echo ""
-elif [ $user_selection -eq "7" ]
+elif [ $user_selection -eq "8" ]
 then
   echo "Please enter the user name"
   read -r
   user_name=$REPLY
   occtl disconnect user $user_name
   echo ""
-elif [ $user_selection -eq "8" ]
+elif [ $user_selection -eq "9" ]
 then
   occtl show ip bans
   echo ""
-elif [ $user_selection -eq "9" ]
+elif [ $user_selection -eq "10" ]
 then
   echo "Please enter the user IP address"
   read -r
   user_ip=$REPLY
   occtl unban ip $user_ip
+  echo ""
+elif [ $user_selection -eq "11" ]
+then
+  occtl show sessions all  > /etc/ocserv/temp_ocserv
+  user_connection_info_file="/etc/ocserv/temp_ocserv"
+  while read line; do echo "---" $line | awk '{print $3, $6 ,$7}'; done < $user_connection_info_file
+  rm -f /etc/ocserv/temp_ocserv
   echo ""
 else
   echo "You did not select the correct option"
