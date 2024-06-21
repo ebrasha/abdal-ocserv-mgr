@@ -31,6 +31,7 @@ The best tool for OpenConnect VPN Server management
 - Support Fedora - Debian - CentOS - Ubuntu - Red Hat
 
 ## 📝️ How it Works?
+```bash
 git clone https://github.com/ebrasha/Abdal-OCSERV-MGR.git
 
 cd Abdal-OCSERV-MGR/
@@ -38,7 +39,7 @@ cd Abdal-OCSERV-MGR/
 chmod +x abdal-ocserv-mgr.sh
     
 ./abdal-ocserv-mgr.sh
-
+```
 
 ## 🤵 Programmer
 Handcrafted with Passion by Ebrahim Shafiei (EbraSha)
