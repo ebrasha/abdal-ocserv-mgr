@@ -12,8 +12,8 @@ The best tool for OpenConnect VPN Server management
 > Compatible with all Linux
 >
 ## ⚓ Prerequisites for programmers
- OcServ
- Pure BashScript
+- OcServ
+- Pure BashScript
 
 ## ✨ Features
 
