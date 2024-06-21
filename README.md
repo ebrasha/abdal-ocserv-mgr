@@ -11,7 +11,7 @@ The best tool for OpenConnect VPN Server management
 > OCSERV (OpenConnect VPN Server)
 > Compatible with all Linux
 >
-## ⚓ Development Environment Setup
+## 🛠️ Development Environment Setup
 - OcServ
 - Pure BashScript
 
