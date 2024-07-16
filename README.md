@@ -4,7 +4,7 @@
 
  ## 💎 General purpose
 
-The best tool for OpenConnect VPN Server management
+The best tool for managing an OpenConnect VPN server
 
 
 **Requires**
